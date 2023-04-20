@@ -18,10 +18,14 @@ function main() {
     resetErrorMessages();
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
+    validateDate();
+}
+function validateDate() {
     var dobBox = document.getElementById("dob");
     var dob = dobBox.value;
     if (!isValidDate(dob)) {
-        dobBox.nextElementSibling.innerHTML = "MM/DD/YYYY";
+        var errSpan = document.getElementById("dob-span");
+        errSpan.innerHTML = "MM/DD/YYYY";
     }
 }
 function isValidDate(input) {

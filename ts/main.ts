@@ -23,12 +23,17 @@ function main():void{
     resetErrorMessages();
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
-    
-    // Validate date
+    validateDate();
+}
+
+function validateDate():void{
     let dobBox = <HTMLInputElement>document.getElementById("dob");
     let dob = dobBox.value;
-    if(!isValidDate(dob)){
-        dobBox.nextElementSibling.innerHTML = "MM/DD/YYYY"
+    if (!isValidDate(dob)) {
+        // dobBox.nextElementSibling.innerHTML = "MM/DD/YYYY"
+        // or DOM(document object model) approach
+        let errSpan = document.getElementById("dob-span");
+        errSpan.innerHTML = "MM/DD/YYYY";
     }
 }
 
@@ -47,7 +52,7 @@ function isValidDate(input:string):boolean{
  * @param errMsg The message to display in the sibling span of the textbox
  * @returns boolean
  */
-function isTextPresent(id:string, errMsg:string):boolean {
+function isTextPresent(id:string, errMsg:string):boolean{
     let txtBox = <HTMLInputElement>document.getElementById(id);
     let txtBoxValue = txtBox.value;
     if (txtBoxValue == "") {
