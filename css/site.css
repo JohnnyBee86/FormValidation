@@ -1,6 +1,13 @@
 h1{
     text-align: center;
 }
+h1, form label, form input{
+    font-family: 'Chivo Mono', monospace;
+}
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
 form span{
     color: red;
 }
@@ -15,6 +22,14 @@ form  label{
 }
 form button{
     margin-left: 50%;
+    padding: 1em;
+    border-radius: .5em;
+    color: green;
+    background-color: purple;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: aliceblue;
 }
 @media only screen and (max-width: 475px){
     form label{
