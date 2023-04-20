@@ -31,6 +31,10 @@ form button{
 form button:hover{
     background-color: aliceblue;
 }
+.message{
+    font-family: 'Chivo Mono', monospace;
+    text-align: center;
+}
 @media only screen and (max-width: 475px){
     form label{
         text-align: left;
