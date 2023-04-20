@@ -23,6 +23,22 @@ function main():void{
     resetErrorMessages();
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
+    
+    // Validate date
+    let dobBox = <HTMLInputElement>document.getElementById("dob");
+    let dob = dobBox.value;
+    if(!isValidDate(dob)){
+        dobBox.nextElementSibling.innerHTML = "MM/DD/YYYY"
+    }
+}
+
+function isValidDate(input:string):boolean{
+    // mm/dd/yyyy
+    // \d{1,2}\/\d{1,2}\/\d{4} checks for date format
+    let pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g 
+    // g(global) looks for pattern throughout string
+    // ^ $ looks for one occurrence, no extra
+    return pattern.test(input);
 }
 
 /**
