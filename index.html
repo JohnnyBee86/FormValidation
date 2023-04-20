@@ -12,12 +12,18 @@
     <form>
         <label for="first-name">First Name</label>
         <input type="text" id="first-name">
-        <span id="first-name-span">*</span>
+        <span data-required id="first-name-span"
+            data-default-error="First name is required">*</span>
         <br>
+
         <label for="last-name">Last Name</label>
         <input type="text" id="last-name">
-        <span id="last-name-span">*</span>
+        <span data-required id="last-name-span">*</span>
         <br>
+
+        <label for="dob">Date of Birth</label>
+        <input type="text" id="dob">
+        <span id="dob"></span>
 
         <button type="button">Register</button>
     </form>
